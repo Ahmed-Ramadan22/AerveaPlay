@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "807681345320",
+    "firebase_url": "https://aerveaplay.firebaseio.com",
+    "project_id": "aerveaplay",
+    "storage_bucket": "aerveaplay.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807681345320:android:d334bb35b72f3bf80af21d",
+        "android_client_info": {
+          "package_name": "com.example.aerveaplay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807681345320-94rlvhvd8mkcbl8vas4bmj0ae0j3f3o9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aerveaplay",
+            "certificate_hash": "ce766f38ad44b16e2a3f1fa8bf2ccfbbcc511eb4"
+          }
+        },
+        {
+          "client_id": "807681345320-hvkfjpnpm727na1h17l4jk2qr1mij0re.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0T204p7U345zDoPxWc4m4lnh75lCkyjc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807681345320-hvkfjpnpm727na1h17l4jk2qr1mij0re.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
