@@ -2,7 +2,6 @@
     <string name="app_name">AERVEAplay</string>
     <string name="logo">logo</string>
     <string name="copyright_2020">Copyright   ©   2020</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="next">Next > </string>
     <string name="get_the_first_n_movie_amp_tv_information"><![CDATA[Get the first \n Movie & TV information.]]></string>
@@ -10,8 +9,7 @@
     <string name="skip">Skip</string>
     <string name="let_s_get_something">LET\'S GET SOMETHING.</string>
     <string name="good_to_see_you">Good to see you!</string>
-    <string name="iconfacebook">iconFaceBook</string>
-    <string name="icongmail">IconGmail</string>
+
     <string name="username">User Name</string>
     <string name="password">Password</string>
     <string name="forget_password">Forget password?</string>
@@ -20,8 +18,22 @@
     <string name="sign_up">Sign Up</string>
     <string name="register">Register</string>
     <string name="already_have_an_account">Already have an account?</string>
-    <string name="email">Email.</string>
+    <string name="email">Email</string>
     <string name="back">Back</string>
     <string name="todo">TODO</string>
     <string name="welcome">Welcome.\n Millions of movies people to discover.</string>
+    <string name="or_connect_using">Or connect using</string>
+    <string name="log_in">lOG IN</string>
+    <string name="create">Create</string>
+    <string name="create_an_account_to_aervea_to_get_all_features">Create an account to Aervea to get all features</string>
+    <string name="confirm_password">Confirm Password</string>
+
+    <string name="UserName">Please write your User Name.</string>
+    <string name="PhoneNumber">Invalid your Phone Number.</string>
+    <string name="InvalidPhoneNumber">Invalid your Phone Number</string>
+    <string name="have8characters">You must have 8 characters in your password</string>
+    <string name="InvalidEmail">Invalid email address like ####@###.###</string>
+    <string name="characters">You must have 8 characters in your password</string>
+    <string name="confirm">the password not  Matches.</string>
+
 </resources>

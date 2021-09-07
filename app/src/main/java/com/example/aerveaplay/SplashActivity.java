@@ -1,6 +1,8 @@
 package com.example.aerveaplay;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.library.baseAdapters.DataBinderMapperImpl;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,13 +12,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.example.aerveaplay.databinding.ActivitySplashBinding;
 import com.example.aerveaplay.onboarding.ui.OnboardingActivity;
 
 
 public class SplashActivity extends AppCompatActivity {
 
     Animation anim;
-    ImageView imageView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,29 +28,25 @@ public class SplashActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.activity_splash);
+        ActivitySplashBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_splash);
 
-
-        imageView = findViewById(R.id.logo_splash_img);
         anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
         anim.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
             }
-
             @Override
             public void onAnimationEnd(Animation animation) {
                 startActivity(new Intent(SplashActivity.this, OnboardingActivity.class));
                 finish();
 
-                    }
-
-
+            }
             @Override
             public void onAnimationRepeat(Animation animation) {
             }
         });
-        imageView.startAnimation(anim);
+
+        binding.logoSplashImg.startAnimation(anim);
 
     }
 

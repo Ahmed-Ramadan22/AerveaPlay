@@ -1,0 +1,31 @@
+ 
+==> Topic we Use it in App;
+
+ 1) Java language and xml;
+ 2) Tasks & Back Stack.
+ 3) Static Views
+ 4) Dynamic User Interface (Recycler view, viewPager"3Walkthrought").
+ **Note using a "CarouselRecyclerview"
+
+ 5) Fragments .
+ 6) paperdb to store the movie details in offline in app
+ 7) Animation
+ 8) MVVM Architecture.
+ 9) Image Loading "Picasso"
+10) TMDB Api 
+
+==> Movie App Process to Build
+
+ 1) Splash Screen Module.   1  day 
+ 2) 3Walkthrought Module.   2  day 
+ 3) Home Screen Module.     12 day
+ 4) Search Module.          2  day
+ 5) Navigation-Drawer Module. 2 day 
+ 6) Moives-What's-Populer-lsit Module Create this for more *(Trending and Seasons). 4 day 
+ 7) Movie Details Module. 5 day
+
+  	
+		1+2+12+2+2+4+5 = 28 working Days..
+
+Started: ...........
+

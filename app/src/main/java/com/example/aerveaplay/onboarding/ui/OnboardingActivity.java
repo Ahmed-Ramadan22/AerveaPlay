@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.aerveaplay.Login.LoginActivity;
 import com.example.aerveaplay.MainActivity;
 import com.example.aerveaplay.R;
 import com.example.aerveaplay.onboarding.adapter.SliderAdapter;
@@ -26,13 +27,13 @@ import java.util.List;
 public class OnboardingActivity extends AppCompatActivity {
 
     private ViewPager screenPager;
-    SliderAdapter introViewPagerAdapter;
-    TabLayout tabIndicator;
-    TextView tv_Next;
-    int position = 0;
-    Button btnGetStarted;
-    Animation btnAnim;
-    TextView tvSkip;
+    private SliderAdapter introViewPagerAdapter;
+    private TabLayout tabIndicator;
+    private TextView tv_Next;
+    private int position = 0;
+    private Button btnGetStarted;
+    private Animation btnAnim;
+    private TextView tvSkip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,6 @@ public class OnboardingActivity extends AppCompatActivity {
         tvSkip = findViewById(R.id.tv_skip);
 
         // fill list screen
-
         final List<ScreenItem> mList = new ArrayList<>();
         mList.add(new ScreenItem("Get the first \n" + " Movie & TV information.", R.drawable.walk1));
         mList.add(new ScreenItem("Know the movie \n" + "is not worth Watching.", R.drawable.walk2));
@@ -64,7 +64,7 @@ public class OnboardingActivity extends AppCompatActivity {
         // setup tablayout with viewpager
         tabIndicator.setupWithViewPager(screenPager);
 
-        // next button click Listner
+        // next button click Listener
         tv_Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,7 +106,7 @@ public class OnboardingActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //open main activity
-                Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
+                Intent mainActivity = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(mainActivity);
                 finish();
 
