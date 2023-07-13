@@ -11,9 +11,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class AuthViewModel extends AndroidViewModel {
 
-    private AuthenticationRepo repo;
-    private MutableLiveData<FirebaseUser> userData;
-    private MutableLiveData<Boolean> loggedStatus;
+    private final AuthenticationRepo repo;
+    private final MutableLiveData<FirebaseUser> userData;
+    private final MutableLiveData<Boolean> loggedStatus;
 
     public MutableLiveData<FirebaseUser> getUserData() {
         return userData;

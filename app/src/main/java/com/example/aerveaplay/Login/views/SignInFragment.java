@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -29,7 +30,7 @@ public class SignInFragment extends Fragment {
     private NavController navController;
     private EditText email_ET, pass_ET;
     private Button logIn_Btn;
-    private TextView createAccount_tv;
+    private TextView createAccount_tv, restPassword;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,7 @@ public class SignInFragment extends Fragment {
 
         email_ET = view.findViewById(R.id.email_IN_edit_text);
         pass_ET = view.findViewById(R.id.PASS_IN_edit_text);
+        restPassword = view.findViewById(R.id.rest_password);
 
         createAccount_tv = view.findViewById(R.id.createAccount);
         logIn_Btn = view.findViewById(R.id.login_btn);
@@ -76,6 +78,22 @@ public class SignInFragment extends Fragment {
             }
         });
 
+
+        //Goto rest password fragment
+        restPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Create new fragment and transaction
+                Fragment newFrag = new RestPaswordFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.nav_host_fragment,newFrag);
+                transaction.addToBackStack(null);
+                transaction.commit();
+
+            }
+        });
+
+        //Login Validation
         logIn_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

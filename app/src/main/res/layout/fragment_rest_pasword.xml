@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Login.views.RestPaswordFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="50dp"
+            app:lottie_rawRes="@raw/forget_password"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bebas_neue"
+            android:gravity="center"
+            android:text="@string/forget_password_"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/gradient_start_color"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/viewExpYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/provide_your_account_s_email_for_which_you_want_to_reset_your_password"
+            android:textAlignment="center"
+            android:textColor="@color/ColorTextDarkows"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtLayoutEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint="@string/enter_your_email"
+            android:textColorHint="@color/ColorTextDarkows"
+            app:boxStrokeColor="@color/gradient_start_color">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtForgotPasswordEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gradient_start_color"
+                android:inputType="textEmailAddress"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginStart="25dp">
+
+            <ProgressBar
+                android:id="@+id/forgetPasswordProgressbar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:visibility="invisible" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReset"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/gradient_start_color"
+                android:fontFamily="@font/comfortaa_bold"
+                android:textColor="@color/ColorTextWhite"
+                android:textStyle="bold"
+                android:text="@string/reset_password"
+                app:cornerRadius="10dp" />
+
+        </FrameLayout>
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

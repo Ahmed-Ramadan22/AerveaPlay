@@ -34,5 +34,9 @@
     <string name="InvalidEmail">Invalid email address like ####@###.###</string>
     <string name="characters">You must have 8 characters in your password</string>
     <string name="confirm">the password not  Matches.</string>
+    <string name="forget_password_">Forget Password</string>
+    <string name="provide_your_account_s_email_for_which_you_want_to_reset_your_password">Provide your account\'s email for which you want to reset your password!</string>
+    <string name="enter_your_email">Enter Your Email ...</string>
+    <string name="reset_password">Reset Password</string>
 
 </resources>
