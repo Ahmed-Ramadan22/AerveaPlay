@@ -20,7 +20,6 @@ public class SplashActivity extends AppCompatActivity {
 
     Animation anim;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -94,7 +94,7 @@ public class SignUpFragment extends Fragment {
                 } else if (TextUtils.isEmpty(pass) || !(pass.length() >= 8)) {
                     pass_ET.setError(getString(R.string.characters));
                 } else if (confirmPass.equals(pass)) {
-                    pass_ET.setError(getString(R.string.confirm));
+                    confirmPass_ET.setError(getString(R.string.confirm));
                 } else {
                     viewModel.register(email, pass);
                 }

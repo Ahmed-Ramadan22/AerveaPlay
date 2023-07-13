@@ -31,7 +31,6 @@
     <string name="UserName">Please write your User Name.</string>
     <string name="PhoneNumber">Invalid your Phone Number.</string>
     <string name="InvalidPhoneNumber">Invalid your Phone Number</string>
-    <string name="have8characters">You must have 8 characters in your password</string>
     <string name="InvalidEmail">Invalid email address like ####@###.###</string>
     <string name="characters">You must have 8 characters in your password</string>
     <string name="confirm">the password not  Matches.</string>
