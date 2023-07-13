@@ -22,6 +22,8 @@ import com.example.aerveaplay.Login.viewmodel.AuthViewModel;
 import com.example.aerveaplay.R;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 public class SignUpFragment extends Fragment {
 
     private AuthViewModel viewModel;
@@ -37,14 +39,11 @@ public class SignUpFragment extends Fragment {
 
         viewModel = new ViewModelProvider(this, ViewModelProvider
                 .AndroidViewModelFactory
-                .getInstance(getActivity().getApplication())).get(AuthViewModel.class);
+                .getInstance(Objects.requireNonNull(getActivity()).getApplication())).get(AuthViewModel.class);
 
-        viewModel.getUserData().observe(this, new Observer<FirebaseUser>() {
-            @Override
-            public void onChanged(FirebaseUser firebaseUser) {
-                if (firebaseUser != null) {
-                    navController.navigate(R.id.action_sigInFragment_to_mainActivity);
-                }
+        viewModel.getUserData().observe(this, firebaseUser -> {
+            if (firebaseUser != null) {
+                navController.navigate(R.id.action_sigInFragment_to_mainActivity);
             }
         });
 
@@ -78,28 +77,25 @@ public class SignUpFragment extends Fragment {
             }
         });
 
-        SignUp_Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = email_ET.getText().toString();
-                String pass = pass_ET.getText().toString();
-                String name = userName_ET.getText().toString();
-                String confirmPass = confirmPass_ET.getText().toString();
-                String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+        SignUp_Btn.setOnClickListener(v -> {
+            String email = email_ET.getText().toString();
+            String pass = pass_ET.getText().toString();
+            String name = userName_ET.getText().toString();
+            String confirmPass = confirmPass_ET.getText().toString();
+            String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-                if (TextUtils.isEmpty(name)) {
-                    userName_ET.setError(getString(R.string.UserName));
-                } else if (TextUtils.isEmpty(email) || !email.matches(emailPattern)) {
-                    email_ET.setError(getString(R.string.InvalidEmail));
-                } else if (TextUtils.isEmpty(pass) || !(pass.length() >= 8)) {
-                    pass_ET.setError(getString(R.string.characters));
-                } else if (confirmPass.equals(pass)) {
-                    confirmPass_ET.setError(getString(R.string.confirm));
-                } else {
-                    viewModel.register(email, pass);
-                }
-
+            if (TextUtils.isEmpty(name)) {
+                userName_ET.setError(getString(R.string.UserName));
+            } else if (TextUtils.isEmpty(email) || !email.matches(emailPattern)) {
+                email_ET.setError(getString(R.string.InvalidEmail));
+            } else if (TextUtils.isEmpty(pass) || !(pass.length() >= 8)) {
+                pass_ET.setError(getString(R.string.characters));
+            } else if (!confirmPass.equals(pass)) {
+                confirmPass_ET.setError(getString(R.string.confirm));
+            } else {
+                viewModel.register(email, pass);
             }
+
         });
     }
 
