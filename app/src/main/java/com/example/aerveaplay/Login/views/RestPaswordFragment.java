@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
 
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -30,6 +31,8 @@ public class RestPaswordFragment extends Fragment {
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
     private String strEmail;
+    private NavController navController;
+
 
     public RestPaswordFragment() {
         // Required empty public constructor
@@ -73,7 +76,6 @@ public class RestPaswordFragment extends Fragment {
 
     private  void ResetPassword(){
         progressBar.setVisibility(View.VISIBLE);
-        btnReset.setVisibility(View.INVISIBLE);
 
         mAuth.sendPasswordResetEmail(strEmail)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

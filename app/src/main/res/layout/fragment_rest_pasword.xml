@@ -72,33 +72,30 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginStart="25dp">
 
             <ProgressBar
                 android:id="@+id/forgetPasswordProgressbar"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginStart="25dp"
                 android:layout_gravity="center_horizontal"
                 android:visibility="invisible" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnReset"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginStart="25dp"
                 android:backgroundTint="@color/gradient_start_color"
                 android:fontFamily="@font/comfortaa_bold"
                 android:textColor="@color/ColorTextWhite"
                 android:textStyle="bold"
                 android:text="@string/reset_password"
                 app:cornerRadius="10dp" />
-
-        </FrameLayout>
-
 
 
     </LinearLayout>
