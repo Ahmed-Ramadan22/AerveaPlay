@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_sigInFragment_to_sigUpFragment"
             app:destination="@id/sigUpFragment" />
+        <action
+            android:id="@+id/action_sigInFragment_to_restPaswordFragment"
+            app:destination="@id/restPaswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/sigUpFragment"
@@ -34,6 +37,15 @@
         android:name="com.example.aerveaplay.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/restPaswordFragment"
+        android:name="com.example.aerveaplay.Login.views.RestPaswordFragment"
+        android:label="fragment_rest_pasword"
+        tools:layout="@layout/fragment_rest_pasword" >
+        <action
+            android:id="@+id/action_restPaswordFragment_to_sigInFragment"
+            app:destination="@id/sigInFragment" />
+    </fragment>
 
 
 </navigation>

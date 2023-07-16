@@ -84,11 +84,7 @@ public class SignInFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 // Create new fragment and transaction
-                Fragment newFrag = new RestPaswordFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.nav_host_fragment,newFrag);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                navController.navigate(R.id.action_sigInFragment_to_restPaswordFragment);
 
             }
         });
