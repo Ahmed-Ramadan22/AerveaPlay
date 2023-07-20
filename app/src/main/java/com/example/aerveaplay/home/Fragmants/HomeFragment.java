@@ -1,4 +1,4 @@
-package com.example.aerveaplay.Fragmants;
+package com.example.aerveaplay.home.Fragmants;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,14 +10,12 @@ import androidx.fragment.app.Fragment;
 import com.example.aerveaplay.R;
 
 
-public class SettingFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
 
+    public HomeFragment() {
 
-    public SettingFragment() {
-        // Required empty public constructor
     }
-
 
 
     @Override
@@ -30,6 +28,6 @@ public class SettingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setting, container, false);
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
 }

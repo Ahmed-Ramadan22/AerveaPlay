@@ -17,7 +17,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.aerveaplay.MainActivity;
+import com.example.aerveaplay.home.ui.MainActivity;
 import com.example.aerveaplay.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

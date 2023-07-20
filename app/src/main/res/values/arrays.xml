@@ -3,24 +3,26 @@
 
     <string-array name="id_activityScreenTitles">
 
-        <item></item>
-        <item>DashBoard</item>
-        <item>My Profile</item>
-        <item>Nearby Restaurants</item>
+        <item>Dashboard</item>
+        <item>Profile</item>
+        <item>Movies</item>
         <item>Settings</item>
         <item>About Us</item>
         <item/>
-        <item>Log Out</item>
+        <item/>
+        <item/>
+        <item>LogOut</item>
     </string-array>
 
     <array name="id_activityScreenIcons">
 
-        <item>@drawable/ic_close</item>
         <item>@drawable/ic_home</item>
         <item>@drawable/ic_profile</item>
-        <item>@drawable/ic_nearby</item>
+        <item>@drawable/ic_movie</item>
         <item>@drawable/ic_settings</item>
         <item>@drawable/ic_about</item>
+        <item>0</item>
+        <item>0</item>
         <item>0</item>
         <item>@drawable/ic_logout</item>
 

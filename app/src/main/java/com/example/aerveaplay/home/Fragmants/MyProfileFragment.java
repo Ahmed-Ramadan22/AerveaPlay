@@ -1,4 +1,4 @@
-package com.example.aerveaplay.Fragmants;
+package com.example.aerveaplay.home.Fragmants;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

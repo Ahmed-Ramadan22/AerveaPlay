@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.aerveaplay.Login.LoginActivity;
-import com.example.aerveaplay.MainActivity;
 import com.example.aerveaplay.R;
 import com.example.aerveaplay.onboarding.adapter.SliderAdapter;
 import com.example.aerveaplay.onboarding.pojo.ScreenItem;

@@ -21,7 +21,7 @@
     <string name="email">Email</string>
     <string name="back">Back</string>
     <string name="todo">TODO</string>
-    <string name="welcome">Welcome.\n Millions of movies people to discover.</string>
+    <string name="welcome">Welcome.\nMillions of movies people to discover. \nExplore Now.</string>
     <string name="or_connect_using">Or connect using</string>
     <string name="log_in">lOG IN</string>
     <string name="create">Create</string>
@@ -38,5 +38,7 @@
     <string name="provide_your_account_s_email_for_which_you_want_to_reset_your_password">Provide your account\'s email for which you want to reset your password!</string>
     <string name="enter_your_email">Enter Your Email</string>
     <string name="reset_password">Reset Password</string>
+    <string name="search_far_a_movie">Search far a Movie</string>
+    <string name="fantastic">Fantastic Movies</string>
 
 </resources>
