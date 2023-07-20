@@ -1,8 +1,7 @@
-package com.example.aerveaplay;
+package com.example.aerveaplay.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.databinding.library.baseAdapters.DataBinderMapperImpl;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +9,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 
+import com.example.aerveaplay.R;
 import com.example.aerveaplay.databinding.ActivitySplashBinding;
 import com.example.aerveaplay.onboarding.ui.OnboardingActivity;
 

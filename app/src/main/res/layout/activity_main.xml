@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".home.ui.MainActivity"
     android:orientation="vertical"
     android:background="@color/colorPrimary">
 
@@ -22,12 +22,34 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/bebas_neue"
         android:text="@string/welcome"
         android:textColor="@color/ColorTextWhite"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/search_edt"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="name"
+        android:background="@drawable/round_search_edt"
+        android:clickable="true"
+        android:drawableEnd="@drawable/ic_search"
+        android:drawablePadding="15dp"
+        android:hint="@string/search_far_a_movie"
+        android:inputType="textAutoComplete"
+        android:maxLines="1"
+        android:paddingStart="15dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/ColorTextWhite"
+        android:textColorHint="@color/ColorTextOffWhite"
+        android:textSize="18sp" />
 
 </LinearLayout>
 
