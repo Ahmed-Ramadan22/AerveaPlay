@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aerveaplay.R;
+import com.example.aerveaplay.home.Fragmants.HomeFragment;
 import com.example.aerveaplay.home.menu.DrawerAdapter;
 import com.example.aerveaplay.home.menu.DrawerItem;
 import com.example.aerveaplay.home.menu.SimpleItem;
@@ -29,11 +30,11 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnItemSelectedListener {
 
     private static final int POS_DASHBOARD = 0;
-    private static final int POS_ACCOUNT = 1;
-    private static final int POS_MESSAGES = 2;
-    private static final int POS_CART = 3;
-    private static final int POS_LOGOUT = 5;
-
+    private static final int POS_PROFILE = 1;
+    private static final int POS_MOVIES = 2;
+    private static final int POS_SETTING = 3;
+    private static final int POS_ABOUT_US = 5;
+    private static final int POS_LOGOUT = 6;
     private String[] screenTitles;
     private Drawable[] screenIcons;
 
@@ -62,9 +63,10 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
 
         DrawerAdapter adapter = new DrawerAdapter(Arrays.asList(
                 createItemFor(POS_DASHBOARD).setChecked(true),
-                createItemFor(POS_ACCOUNT),
-                createItemFor(POS_MESSAGES),
-                createItemFor(POS_CART),
+                createItemFor(POS_PROFILE),
+                createItemFor(POS_MOVIES),
+                createItemFor(POS_SETTING),
+                createItemFor(POS_ABOUT_US),
                 new SpaceItem(48),
                 createItemFor(POS_LOGOUT)));
         adapter.setListener(this);
@@ -76,11 +78,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         list.setAdapter(adapter);
 
         adapter.setSelected(POS_DASHBOARD);
-
-
     }
-
-
     @Override
     public void onBackPressed() {
         finish();
@@ -92,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
             finish();
         }
         slidingRootNav.closeMenu();
-        Fragment selectedScreen = CenteredTextFragment.createFor(screenTitles[position]);
+        Fragment selectedScreen = HomeFragment.createFor(screenTitles[position]);
         showFragment(selectedScreen);
     }
 

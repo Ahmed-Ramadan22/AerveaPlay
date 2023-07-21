@@ -9,8 +9,6 @@
         <item>Settings</item>
         <item>About Us</item>
         <item/>
-        <item/>
-        <item/>
         <item>LogOut</item>
     </string-array>
 
@@ -21,8 +19,6 @@
         <item>@drawable/ic_movie</item>
         <item>@drawable/ic_settings</item>
         <item>@drawable/ic_about</item>
-        <item>0</item>
-        <item>0</item>
         <item>0</item>
         <item>@drawable/ic_logout</item>
 

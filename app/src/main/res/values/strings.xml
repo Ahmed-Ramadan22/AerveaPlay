@@ -39,6 +39,6 @@
     <string name="enter_your_email">Enter Your Email</string>
     <string name="reset_password">Reset Password</string>
     <string name="search_far_a_movie">Search far a Movie</string>
-    <string name="fantastic">Fantastic Movies</string>
+    <string name="fantastic">Fantastic \n   Movies</string>
 
 </resources>
