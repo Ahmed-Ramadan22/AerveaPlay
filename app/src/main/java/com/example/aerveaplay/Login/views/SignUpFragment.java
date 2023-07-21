@@ -39,11 +39,11 @@ public class SignUpFragment extends Fragment {
 
         viewModel = new ViewModelProvider(this, ViewModelProvider
                 .AndroidViewModelFactory
-                .getInstance(Objects.requireNonNull(getActivity()).getApplication())).get(AuthViewModel.class);
+                .getInstance(requireActivity().getApplication())).get(AuthViewModel.class);
 
         viewModel.getUserData().observe(this, firebaseUser -> {
             if (firebaseUser != null) {
-                navController.navigate(R.id.action_sigInFragment_to_mainActivity);
+                navController.navigate(R.id.action_sigUpFragment_to_mainActivity);
             }
         });
 
