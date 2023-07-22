@@ -21,6 +21,9 @@ public class HomeFragment extends Fragment {
 
     public static HomeFragment createFor(String text) {
         HomeFragment fragment = new HomeFragment();
+        Bundle args = new Bundle();
+        args.putString(EXTRA_TEXT, text);
+        fragment.setArguments(args);
         return fragment;
     }
 

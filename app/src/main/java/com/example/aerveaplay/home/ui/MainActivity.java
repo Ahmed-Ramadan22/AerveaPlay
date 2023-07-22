@@ -2,12 +2,21 @@ package com.example.aerveaplay.home.ui;
 
 
 import android.annotation.SuppressLint;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.util.AttributeSet;
+import android.view.View;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -15,12 +24,18 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.aerveaplay.Login.LoginActivity;
 import com.example.aerveaplay.R;
+import com.example.aerveaplay.home.Fragmants.AboutAsAnFragment;
 import com.example.aerveaplay.home.Fragmants.HomeFragment;
+import com.example.aerveaplay.home.Fragmants.MoviesFragment;
+import com.example.aerveaplay.home.Fragmants.MyProfileFragment;
+import com.example.aerveaplay.home.Fragmants.SettingFragment;
 import com.example.aerveaplay.home.menu.DrawerAdapter;
 import com.example.aerveaplay.home.menu.DrawerItem;
 import com.example.aerveaplay.home.menu.SimpleItem;
 import com.example.aerveaplay.home.menu.SpaceItem;
+import com.google.firebase.auth.FirebaseAuth;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
@@ -33,7 +48,8 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     private static final int POS_PROFILE = 1;
     private static final int POS_MOVIES = 2;
     private static final int POS_SETTING = 3;
-    private static final int POS_ABOUT_US = 5;
+    private static final int POS_ABOUT_US = 4;
+    private static final int POS_NULL = 5;
     private static final int POS_LOGOUT = 6;
     private String[] screenTitles;
     private Drawable[] screenIcons;
@@ -78,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         list.setAdapter(adapter);
 
         adapter.setSelected(POS_DASHBOARD);
+
     }
     @Override
     public void onBackPressed() {
@@ -86,13 +103,50 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
 
     @Override
     public void onItemSelected(int position) {
-        if (position == POS_LOGOUT) {
-            finish();
+        Fragment fragment = null;
+
+        switch (position){
+            case POS_DASHBOARD:
+                fragment = new HomeFragment();
+                break;
+            case POS_PROFILE:
+                fragment = new MyProfileFragment();
+                break;
+
+            case POS_MOVIES:
+                fragment = new MoviesFragment();
+                break;
+            case POS_SETTING:
+                fragment = new SettingFragment();
+                break;
+            case POS_ABOUT_US:
+                fragment = new AboutAsAnFragment();
+                break;
+            case POS_LOGOUT:
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+
+            default:
+                break;
+
         }
+
+        if (fragment != null){
+            showFragment(fragment);
+        }
+
+//        if (position == POS_LOGOUT) {
+//            Intent intent = new Intent(this, LoginActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }
         slidingRootNav.closeMenu();
-        Fragment selectedScreen = HomeFragment.createFor(screenTitles[position]);
-        showFragment(selectedScreen);
+
     }
+
 
     private void showFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
