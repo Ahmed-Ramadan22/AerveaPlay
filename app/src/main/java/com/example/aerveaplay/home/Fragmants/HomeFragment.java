@@ -16,17 +16,6 @@ import com.example.aerveaplay.R;
 
 public class HomeFragment extends Fragment {
 
-    private static final String EXTRA_TEXT = "text";
-
-
-    public static HomeFragment createFor(String text) {
-        HomeFragment fragment = new HomeFragment();
-        Bundle args = new Bundle();
-        args.putString(EXTRA_TEXT, text);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

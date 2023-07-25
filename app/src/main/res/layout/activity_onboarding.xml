@@ -27,6 +27,7 @@
         android:textColor="@color/ColorTextWhite"
         android:textSize="16sp"
         android:gravity="center"
+        android:clickable="true"
         android:background="@drawable/border_tv"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -60,6 +61,7 @@
         android:background="@drawable/bg_button"
         app:backgroundTint="@null"
         android:text="@string/get_started"
+        android:clickable="true"
         android:textColor="@color/ColorTextWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -2,21 +2,14 @@ package com.example.aerveaplay.home.ui;
 
 
 import android.annotation.SuppressLint;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.util.AttributeSet;
-import android.view.View;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -43,7 +36,6 @@ import java.util.Arrays;
 
 
 public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnItemSelectedListener {
-
     private static final int POS_DASHBOARD = 0;
     private static final int POS_PROFILE = 1;
     private static final int POS_MOVIES = 2;
@@ -55,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     private Drawable[] screenIcons;
 
     private SlidingRootNav slidingRootNav;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +91,6 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     public void onBackPressed() {
         finish();
     }
-
     @Override
     public void onItemSelected(int position) {
         Fragment fragment = null;
@@ -131,7 +121,6 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
 
             default:
                 break;
-
         }
 
         if (fragment != null){
@@ -146,7 +135,6 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         slidingRootNav.closeMenu();
 
     }
-
 
     private void showFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
