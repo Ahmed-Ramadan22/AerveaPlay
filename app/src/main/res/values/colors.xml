@@ -15,5 +15,6 @@
     <color name="ColorTextDark">#123359</color>
     <color name="ColorTextDarkows">#A6123359</color>
     <color name="gmailcolor">#EA554B</color>
+    <color name="blue">#03A9F4</color>
 
 </resources>

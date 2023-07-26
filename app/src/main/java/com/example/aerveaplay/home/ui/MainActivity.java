@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
                 createItemFor(POS_MOVIES),
                 createItemFor(POS_SETTING),
                 createItemFor(POS_ABOUT_US),
-                new SpaceItem(48),
+                new SpaceItem(55),
                 createItemFor(POS_LOGOUT)));
         adapter.setListener(this);
 

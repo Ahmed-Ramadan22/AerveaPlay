@@ -60,7 +60,7 @@ public class OnboardingActivity extends AppCompatActivity {
         introViewPagerAdapter = new SliderAdapter(this, mList);
         screenPager.setAdapter(introViewPagerAdapter);
 
-        // setup tablayout with viewpager
+        // setup tab layout with viewpager
         tabIndicator.setupWithViewPager(screenPager);
 
         // next button click Listener

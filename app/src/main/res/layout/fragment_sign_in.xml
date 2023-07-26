@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Login.views.SignInFragment">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="260dp"
+            android:layout_height="280dp"
             android:background="@drawable/blue_bg">
 
             <ImageView
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="55dp"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logo"
+                android:contentDescription="@string/logo"/>
 
         </FrameLayout>
 
@@ -52,12 +49,13 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
+            android:layout_width="370dp"
             android:layout_height="60dp"
             android:layout_marginStart="22dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="22dp"
             android:hint="@string/email"
+            android:layout_gravity="center"
             app:boxCornerRadiusTopEnd="9dp"
             app:boxCornerRadiusTopStart="9dp"
             app:boxStrokeColor="@color/gradient_end_color"
@@ -74,12 +72,13 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="match_parent"
+            android:layout_width="370dp"
             android:layout_height="60dp"
             android:layout_marginStart="22dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="22dp"
             android:hint="@string/password"
+            android:layout_gravity="center"
             app:boxCornerRadiusTopEnd="9dp"
             app:boxCornerRadiusTopStart="9dp"
             app:boxStrokeColor="@color/gradient_end_color"
@@ -97,12 +96,12 @@
 
         <TextView
             android:id="@+id/rest_password"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="25dp"
-            android:gravity="end"
+            android:layout_gravity="end"
             android:text="@string/forget_password"
             android:textColor="@color/ColorTextDark"
             android:textSize="14sp"
@@ -114,7 +113,7 @@
             android:layout_width="240dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="65dp"
             android:background="@drawable/login_btn_back"
             android:text="@string/log_in"
             android:textSize="16sp"
@@ -123,12 +122,12 @@
 
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="25dp"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:text="@string/or_connect_using"
             android:textColor="@color/ColorTextDarkows"
             android:textSize="13sp"
@@ -136,36 +135,38 @@
 
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/icon_facebook"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/facebook"/>
+                android:src="@drawable/facebook"
+                android:contentDescription="@string/logo"/>
 
             <ImageView
                 android:id="@+id/icon_gmail"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/gmail"/>
+                android:src="@drawable/gmail"
+                android:contentDescription="@string/logo"/>
 
         </LinearLayout>
 
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="25dp"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:orientation="horizontal">
 
             <TextView
@@ -187,8 +188,4 @@
                 android:layout_marginStart="3dp"/>
         </LinearLayout>
 
-
-
-    </LinearLayout>
-
-</FrameLayout>
+</LinearLayout>
