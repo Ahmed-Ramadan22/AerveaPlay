@@ -5,6 +5,7 @@ import androidx.databinding.DataBindingUtil;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -22,6 +23,9 @@ public class SplashActivity extends AppCompatActivity {
 
     Animation anim;
     private ActivitySplashBinding  binding;
+    private int PRIVATE_MODE = 0;
+    private String PREF_VALE = "Intro_Pref";
+    private SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +38,28 @@ public class SplashActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        sharedPref = getSharedPreferences(PREF_VALE,PRIVATE_MODE);
         anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
         anim.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) { }
             @Override
             public void onAnimationEnd(Animation animation) {
-                startActivity(new Intent(SplashActivity.this, OnboardingActivity.class));
-                finish();
+
+                //Shared Stack check if User Show Intro before or not
+                if (sharedPref.getBoolean(PREF_VALE,false)){
+                    // if user try log again
+                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                    finish();
+
+                } else {
+                    // first time to go
+                    startActivity(new Intent(SplashActivity.this, OnboardingActivity.class));
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putBoolean(PREF_VALE, true);
+                    editor.apply();
+                    finish();
+                }
             }
             @Override
             public void onAnimationRepeat(Animation animation) {
