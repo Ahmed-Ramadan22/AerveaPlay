@@ -19,7 +19,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aerveaplay.Login.LoginActivity;
 import com.example.aerveaplay.R;
-import com.example.aerveaplay.home.Fragmants.AboutAsAnFragment;
 import com.example.aerveaplay.home.Fragmants.HomeFragment;
 import com.example.aerveaplay.home.Fragmants.MoviesFragment;
 import com.example.aerveaplay.home.Fragmants.MyProfileFragment;
@@ -40,8 +39,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     private static final int POS_PROFILE = 1;
     private static final int POS_MOVIES = 2;
     private static final int POS_SETTING = 3;
-    private static final int POS_ABOUT_US = 4;
-    private static final int POS_NULL = 5;
+    private static final int POS_NULL = 4;
     private static final int POS_LOGOUT = 6;
     private String[] screenTitles;
     private Drawable[] screenIcons;
@@ -73,7 +71,6 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
                 createItemFor(POS_PROFILE),
                 createItemFor(POS_MOVIES),
                 createItemFor(POS_SETTING),
-                createItemFor(POS_ABOUT_US),
                 new SpaceItem(55),
                 createItemFor(POS_LOGOUT)));
         adapter.setListener(this);
@@ -108,9 +105,6 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
                 break;
             case POS_SETTING:
                 fragment = new SettingFragment();
-                break;
-            case POS_ABOUT_US:
-                fragment = new AboutAsAnFragment();
                 break;
             case POS_LOGOUT:
                 FirebaseAuth.getInstance().signOut();
