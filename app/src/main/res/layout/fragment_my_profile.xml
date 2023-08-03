@@ -16,7 +16,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="320dp"
-            android:background="@color/blue_off">
+            android:background="@color/colorPrimary">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
@@ -71,7 +71,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:clickable="true">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -99,11 +100,13 @@
                 android:layout_height="100dp"
                 app:cardCornerRadius="8dp"
                 android:layout_marginEnd="9dp"
+                android:clickable="true"
                 app:cardBackgroundColor="@color/ColorTextWhite">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:clickable="true">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -130,11 +133,13 @@
                 android:layout_width="110dp"
                 android:layout_height="100dp"
                 app:cardCornerRadius="8dp"
+                android:clickable="true"
                 app:cardBackgroundColor="@color/ColorTextWhite">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:clickable="true">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -149,7 +154,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Comments"
+                        android:text="@string/comments"
                         android:gravity="center"
                         android:textColor="@color/ColorTextOffWhite"
                         android:textSize="18sp"
@@ -162,14 +167,13 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:scaleType="centerCrop"
             android:layout_marginTop="30dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginStart="2dp"
             android:layout_marginBottom="25dp"
             android:src="@drawable/list_like_movie" />
 
-
     </LinearLayout>
-
 
 </ScrollView>

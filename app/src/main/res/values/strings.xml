@@ -41,5 +41,12 @@
     <string name="search_far_a_movie">Search far a Movie</string>
     <string name="fantastic">Fantastic \n   Movies</string>
     <string name="ahmed_ramadan">Ahmed Ramadan</string>
+    <string name="comments">Comments</string>
+    <string name="setting">Setting</string>
+    <string name="ahmedtramadan4_gmail_com">ahmedtramadan4@gmail.com</string>
+    <string name="address">Address</string>
+    <string name="new_cairo_cairo_egypt">New Cairo, Cairo, Egypt.</string>
+    <string name="logout">LogOut</string>
+    <string name="logout_from_your_exiting_account">Logout from your exiting Account.</string>
 
 </resources>
