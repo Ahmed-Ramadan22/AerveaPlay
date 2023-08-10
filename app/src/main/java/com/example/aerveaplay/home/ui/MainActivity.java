@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     private static final int POS_MOVIES = 2;
     private static final int POS_SETTING = 3;
     private static final int POS_NULL = 4;
-    private static final int POS_LOGOUT = 6;
+    private static final int POS_LOGOUT = 5;
     private String[] screenTitles;
     private Drawable[] screenIcons;
 

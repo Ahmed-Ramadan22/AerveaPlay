@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login.views.SignUpFragment">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <FrameLayout
+            android:id="@+id/frameLayout2"
             android:layout_width="match_parent"
-            android:layout_height="260dp"
-            android:background="@drawable/blue_bg">
+            android:layout_height="270dp"
+            android:background="@drawable/blue_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/back_signIn"
@@ -35,130 +39,159 @@
         </FrameLayout>
 
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:gravity="center"
             android:text="@string/let_s_get_something"
             android:textAllCaps="true"
             android:textColor="@color/ColorTextDark"
             android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
 
         <TextView
+            android:id="@+id/text2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="32dp"
             android:gravity="center"
             android:text="@string/create_an_account_to_aervea_to_get_all_features"
             android:textColor="@color/ColorTextDarkows"
             android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView3" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="34dp"
-            android:layout_marginEnd="22dp"
-            android:hint="@string/username"
-            app:boxCornerRadiusTopEnd="9dp"
-            app:boxCornerRadiusTopStart="9dp"
-            app:boxStrokeColor="@color/gradient_end_color"
-            app:startIconDrawable="@drawable/ic_person">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/user_name_edit_text"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/name_edit"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:singleLine="true" />
+                android:layout_height="60dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginEnd="22dp"
+                android:hint="@string/username"
+                app:boxCornerRadiusTopEnd="9dp"
+                app:boxCornerRadiusTopStart="9dp"
+                app:boxStrokeColor="@color/gradient_end_color"
+                app:startIconDrawable="@drawable/ic_person"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text2">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/user_name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:singleLine="true" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="22dp"
-            android:hint="@string/email"
-            app:boxCornerRadiusTopEnd="9dp"
-            app:boxCornerRadiusTopStart="9dp"
-            app:boxStrokeColor="@color/gradient_end_color"
-            app:startIconDrawable="@drawable/ic_email">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <!--this is the actual edit text which takes the input-->
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/email_edit_text"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email_edit"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:singleLine="true" />
+                android:layout_height="60dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="22dp"
+                android:hint="@string/email"
+                app:boxCornerRadiusTopEnd="9dp"
+                app:boxCornerRadiusTopStart="9dp"
+                app:boxStrokeColor="@color/gradient_end_color"
+                app:startIconDrawable="@drawable/ic_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name_edit">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <!--this is the actual edit text which takes the input-->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:singleLine="true" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="22dp"
-            android:hint="@string/password"
-            app:boxCornerRadiusTopEnd="9dp"
-            app:boxCornerRadiusTopStart="9dp"
-            app:boxStrokeColor="@color/gradient_end_color"
-            app:endIconMode="password_toggle"
-            app:startIconDrawable="@drawable/ic_lock">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pass_edit"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/password_edit_text"
-                android:singleLine="true"/>
+                android:layout_height="60dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="22dp"
+                android:hint="@string/password"
+                app:boxCornerRadiusTopEnd="9dp"
+                app:boxCornerRadiusTopStart="9dp"
+                app:boxStrokeColor="@color/gradient_end_color"
+                app:endIconMode="password_toggle"
+                app:startIconDrawable="@drawable/ic_lock"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email_edit">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/password_edit_text"
+                    android:singleLine="true"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="22dp"
-            android:hint="@string/confirm_password"
-            app:boxCornerRadiusTopEnd="9dp"
-            app:boxCornerRadiusTopStart="9dp"
-            app:boxStrokeColor="@color/gradient_end_color"
-            app:endIconMode="password_toggle"
-            app:startIconDrawable="@drawable/ic_lock">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/confirm_pass"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/confirm_password_edit_text"
-                android:singleLine="true"/>
+                android:layout_height="60dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="22dp"
+                android:hint="@string/confirm_password"
+                app:boxCornerRadiusTopEnd="9dp"
+                app:boxCornerRadiusTopStart="9dp"
+                app:boxStrokeColor="@color/gradient_end_color"
+                app:endIconMode="password_toggle"
+                app:startIconDrawable="@drawable/ic_lock"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pass_edit">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/confirm_password_edit_text"
+                    android:singleLine="true"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/createAccount_btn"
             style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="240dp"
+            android:layout_width="220dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
+            android:layout_marginBottom="60dp"
             android:background="@drawable/login_btn_back"
             android:text="@string/create"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:backgroundTint="@null" />
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/confirm_pass" />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
+</ScrollView>
 
-</FrameLayout>
