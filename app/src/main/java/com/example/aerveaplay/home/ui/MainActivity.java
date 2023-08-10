@@ -19,10 +19,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aerveaplay.Login.LoginActivity;
 import com.example.aerveaplay.R;
-import com.example.aerveaplay.home.Fragmants.HomeFragment;
-import com.example.aerveaplay.home.Fragmants.MoviesFragment;
-import com.example.aerveaplay.home.Fragmants.MyProfileFragment;
-import com.example.aerveaplay.home.Fragmants.SettingFragment;
+import com.example.aerveaplay.home.fragments.HomeFragment;
+import com.example.aerveaplay.home.fragments.MoviesFragment;
+import com.example.aerveaplay.home.fragments.MyProfileFragment;
+import com.example.aerveaplay.home.fragments.SettingFragment;
 import com.example.aerveaplay.home.menu.DrawerAdapter;
 import com.example.aerveaplay.home.menu.DrawerItem;
 import com.example.aerveaplay.home.menu.SimpleItem;
