@@ -84,8 +84,8 @@ dependencies {
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
 
     //Navigation component
-    implementation "androidx.navigation:navigation-fragment:2.6.0"
-    implementation "androidx.navigation:navigation-ui:2.6.0"
+    implementation "androidx.navigation:navigation-fragment:2.7.0"
+    implementation "androidx.navigation:navigation-ui:2.7.0"
 
     //circle Image lib
     implementation 'de.hdodenhof:circleimageview:3.1.0'
