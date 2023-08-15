@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,29 +9,34 @@
     android:background="@color/colorPrimary"
     tools:context=".home.fragments.HomeFragment">
 
+
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/wellfleet"
         android:text="@string/welcome"
         android:textColor="@color/ColorTextWhite"
         android:textSize="20sp"
-        android:fontFamily="@font/wellfleet"
         android:textStyle="bold"
-        android:clickable="true"
-        android:focusable="true"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/search_edt"
         android:layout_width="380dp"
         android:layout_height="48dp"
+        android:layout_gravity="center"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="20dp"
         android:autofillHints="name"
-        android:layout_gravity="center"
         android:background="@drawable/round_search_edt"
         android:clickable="true"
         android:drawableEnd="@drawable/ic_search"
@@ -42,13 +48,46 @@
         android:paddingEnd="10dp"
         android:textColor="@color/black_1"
         android:textColorHint="@color/ColorTextOffWhite"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/text_popular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/wellfleet"
+        android:text="@string/what_s_popular"
+        android:textColor="@color/ColorTextWhite"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_edt" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/popular_movies_recy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"/>
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_popular" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/test_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/ColorTextWhite"
+        android:text="ButtoN GET"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popular_movies_recy" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

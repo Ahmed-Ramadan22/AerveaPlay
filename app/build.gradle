@@ -77,8 +77,6 @@ dependencies {
     //cardview to show the movie poster and name
     implementation "androidx.cardview:cardview:1.0.0"
 
-    // paperdb to store the movie details in offline in app
-    implementation 'io.github.pilgr:paperdb:2.7.1'
 
     //kenburnsview to create animation image view
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
