@@ -84,8 +84,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:background="@color/ColorTextWhite"
-        android:text="ButtoN GET"
+        android:backgroundTint="@color/ColorTextWhite"
+        android:textColor="@color/black_1"
+        android:text="Button GET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/popular_movies_recy" />

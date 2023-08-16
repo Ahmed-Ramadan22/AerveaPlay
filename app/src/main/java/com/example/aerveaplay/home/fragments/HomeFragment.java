@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment {
         Call<MovieSearchResponse> responseCall = movieApiI
                 .searchMovie(
                         Credentials.API_KEY,
-                        "Jack Reacher",
+                        "Action",
                         "1" );
 
         responseCall.enqueue(new Callback<MovieSearchResponse>() {
@@ -69,22 +69,27 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<MovieSearchResponse> call, Response<MovieSearchResponse> response) {
 
                 if (response.code() == 200){
-
-                    Log.v("Tag","The response"+ response.body().toString());
+                    Log.v("Tag","The response "+ response.body().toString());
                     List<MovieModel> movies = new ArrayList<>(response.body().getMovies());
 
                     for (MovieModel movie: movies){
                         Log.v("Tag","The Release date "+ movie.getRelease_date());
+                    }
 
+                } else {
+
+                    try {
+                        Log.v("Tag", "Error: "+ response.errorBody().string());
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
 
                 }
-
             }
 
             @Override
             public void onFailure(Call<MovieSearchResponse> call, Throwable t) {
-
+                t.printStackTrace();
             }
         });
 
