@@ -76,6 +76,7 @@ public class RestPaswordFragment extends Fragment {
 
     private  void ResetPassword(){
         progressBar.setVisibility(View.VISIBLE);
+        btnReset.setVisibility(View.INVISIBLE);
 
         mAuth.sendPasswordResetEmail(strEmail)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
