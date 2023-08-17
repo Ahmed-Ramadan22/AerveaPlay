@@ -73,7 +73,7 @@ public class HomeFragment extends Fragment {
                     List<MovieModel> movies = new ArrayList<>(response.body().getMovies());
 
                     for (MovieModel movie: movies){
-                        Log.v("Tag","The Release date "+ movie.getRelease_date());
+                        Log.v("Tag","The Release date "+ movie.getTitle());
                     }
 
                 } else {
