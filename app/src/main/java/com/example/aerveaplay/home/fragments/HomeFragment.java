@@ -18,6 +18,7 @@ import com.example.aerveaplay.utils.Credentials;
 import com.example.aerveaplay.utils.MovieApiI;
 import com.example.models.MovieModel;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +48,7 @@ public class HomeFragment extends Fragment {
         btn_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GetRetrofitResponse();
+                GetRetrofitResponseAccordingToID();
             }
         });
 
@@ -95,5 +96,42 @@ public class HomeFragment extends Fragment {
 
     }
 
+    //This Function for Get Movie by id
+    private void GetRetrofitResponseAccordingToID(){
+
+        MovieApiI movieApiI = Servicey.getMovieApi();
+        Call<MovieModel> responseCall = movieApiI
+                .getMovie(
+                        34311,
+                        Credentials.API_KEY);
+
+        responseCall.enqueue(new Callback<MovieModel>() {
+            @Override
+            public void onResponse(Call<MovieModel> call, Response<MovieModel> response) {
+                if (response.code() == 200){
+                    MovieModel model = response.body();
+                    Log.v("Tag", "The Response: " +model.getTitle());
+                }else {
+
+                    try {
+                        Log.v("Tag", "Error " + response.errorBody().string());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MovieModel> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+
+    }
+
 
 }
+
+
+
