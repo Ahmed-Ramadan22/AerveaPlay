@@ -102,7 +102,7 @@ public class HomeFragment extends Fragment {
         MovieApiI movieApiI = Servicey.getMovieApi();
         Call<MovieModel> responseCall = movieApiI
                 .getMovie(
-                        34311,
+                        346,
                         Credentials.API_KEY);
 
         responseCall.enqueue(new Callback<MovieModel>() {
