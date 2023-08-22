@@ -1,6 +1,6 @@
 package com.example.aerveaplay.utils;
 
-import com.example.aerveaplay.response.MovieSearchResponse;
+import com.example.aerveaplay.responses.MovieSearchResponse;
 import com.example.aerveaplay.models.MovieModel;
 
 import retrofit2.Call;

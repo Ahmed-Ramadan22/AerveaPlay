@@ -1,4 +1,4 @@
-package com.example.aerveaplay.response;
+package com.example.aerveaplay.responses;
 
 import com.example.aerveaplay.models.MovieModel;
 import com.google.gson.annotations.Expose;
