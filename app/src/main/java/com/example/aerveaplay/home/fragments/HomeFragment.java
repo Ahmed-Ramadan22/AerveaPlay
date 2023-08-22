@@ -10,13 +10,16 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.aerveaplay.R;
 import com.example.aerveaplay.request.Servicey;
 import com.example.aerveaplay.response.MovieSearchResponse;
 import com.example.aerveaplay.utils.Credentials;
-import com.example.aerveaplay.utils.MovieApiI;
-import com.example.models.MovieModel;
+import com.example.aerveaplay.utils.IMovieApi;
+import com.example.aerveaplay.models.MovieModel;
+import com.example.aerveaplay.viewmodels.MovieListViewModel;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,6 +33,9 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
 
     private Button btn_test;
+
+    // viewModel Implement
+    private MovieListViewModel movieListViewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,21 +51,28 @@ public class HomeFragment extends Fragment {
 
         btn_test = view.findViewById(R.id.test_btn);
 
-        btn_test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GetRetrofitResponseAccordingToID();
-            }
-        });
+        // viewModel Provider
+        movieListViewModel =   new ViewModelProvider(this).get(MovieListViewModel.class);
 
 
     }
 
+
+    // Observing any Data Change.
+    private void ObserveAnyChange(){
+        movieListViewModel.getMovies().observe(this, new Observer<List<MovieModel>>() {
+            @Override
+            public void onChanged(List<MovieModel> movieModels) {
+
+            }
+        });
+    }
+
     private void GetRetrofitResponse() {
 
-        MovieApiI movieApiI = Servicey.getMovieApi();
+        IMovieApi IMovieApi = Servicey.getMovieApi();
 
-        Call<MovieSearchResponse> responseCall = movieApiI
+        Call<MovieSearchResponse> responseCall = IMovieApi
                 .searchMovie(
                         Credentials.API_KEY,
                         "Action",
@@ -99,10 +112,10 @@ public class HomeFragment extends Fragment {
     //This Function for Get Movie by id
     private void GetRetrofitResponseAccordingToID(){
 
-        MovieApiI movieApiI = Servicey.getMovieApi();
-        Call<MovieModel> responseCall = movieApiI
+        IMovieApi IMovieApi = Servicey.getMovieApi();
+        Call<MovieModel> responseCall = IMovieApi
                 .getMovie(
-                        346,
+                        343611,
                         Credentials.API_KEY);
 
         responseCall.enqueue(new Callback<MovieModel>() {

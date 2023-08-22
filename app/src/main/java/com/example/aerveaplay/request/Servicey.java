@@ -1,7 +1,7 @@
 package com.example.aerveaplay.request;
 
 import com.example.aerveaplay.utils.Credentials;
-import com.example.aerveaplay.utils.MovieApiI;
+import com.example.aerveaplay.utils.IMovieApi;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -16,9 +16,9 @@ public class Servicey {
 
     private static Retrofit retrofit = retrofitBuilder.build();
 
-    private static MovieApiI movieApi = retrofit.create(MovieApiI.class);
+    private static IMovieApi movieApi = retrofit.create(IMovieApi.class);
 
-    public static MovieApiI getMovieApi(){
+    public static IMovieApi getMovieApi(){
         return movieApi;
     }
 

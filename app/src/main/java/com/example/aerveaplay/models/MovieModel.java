@@ -1,4 +1,4 @@
-package com.example.models;
+package com.example.aerveaplay.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
