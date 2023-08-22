@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 
     <application
@@ -12,8 +11,8 @@
         android:roundIcon="@mipmap/icon_app_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login.LoginActivity"/>
 
+        <activity android:name=".Login.LoginActivity"/>
         <activity android:name=".Login.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -28,6 +27,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>

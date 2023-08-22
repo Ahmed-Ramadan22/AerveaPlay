@@ -1,6 +1,6 @@
 package com.example.aerveaplay.response;
 
-import com.example.models.MovieModel;
+import com.example.aerveaplay.models.MovieModel;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

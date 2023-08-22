@@ -1,14 +1,14 @@
 package com.example.aerveaplay.utils;
 
 import com.example.aerveaplay.response.MovieSearchResponse;
-import com.example.models.MovieModel;
+import com.example.aerveaplay.models.MovieModel;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
-public interface MovieApiI {
+public interface IMovieApi {
 
     //Search for Movies
     //   https://api.themoviedb.org/3/search/movie?query=Jack+Reacher&api_key=e2dd873b89d9427e4282098bbb17082c'
