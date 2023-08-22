@@ -5,17 +5,21 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.aerveaplay.models.MovieModel;
+import com.example.aerveaplay.repositories.MovieRepository;
 
 import java.util.List;
 
 public class MovieListViewModel extends ViewModel {
 
-    private MutableLiveData<List<MovieModel>> mMoviesLiveData = new MutableLiveData<>();
 
-    public MovieListViewModel() {}
+    private MovieRepository movieRepository;
+
+    public MovieListViewModel() {
+        movieRepository = MovieRepository.getInstance();
+    }
 
     public LiveData<List<MovieModel>> getMovies(){
-        return mMoviesLiveData;
+        return movieRepository.getMovies();
     }
 
 

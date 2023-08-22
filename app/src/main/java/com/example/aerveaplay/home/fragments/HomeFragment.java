@@ -15,7 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.aerveaplay.R;
 import com.example.aerveaplay.request.Servicey;
-import com.example.aerveaplay.response.MovieSearchResponse;
+import com.example.aerveaplay.responses.MovieSearchResponse;
 import com.example.aerveaplay.utils.Credentials;
 import com.example.aerveaplay.utils.IMovieApi;
 import com.example.aerveaplay.models.MovieModel;
