@@ -47,7 +47,7 @@ public class MovieApiClient {
         return mMoviesLiveData;
     }
 
-    //Retrieve Data from api
+    //1- This Method that we are going o call through the classes
     public void searchMovieApi(String query,int pageNumber ){
 
         if (retrieveMoviesRunnable != null){
@@ -64,7 +64,7 @@ public class MovieApiClient {
             public void run() {
                 myHandler.cancel(true);
             }
-        },5000, TimeUnit.MICROSECONDS);
+        },3000, TimeUnit.MILLISECONDS);
 
     }
 
@@ -75,7 +75,6 @@ public class MovieApiClient {
         private String query;
         private int pageNumber;
         boolean cancelRequest;
-
 
         public RetrieveMoviesRunnable(String query, int pageNumber) {
             this.query = query;
@@ -115,7 +114,6 @@ public class MovieApiClient {
             }
         }
 
-
         //Search Method/ query
         private Call<MovieSearchResponse> getMovies(String query, int pageNumber){
             return Servicey.getMovieApi().searchMovie(
@@ -130,9 +128,7 @@ public class MovieApiClient {
             cancelRequest = true;
         }
 
-
     }
-
 
 
 }

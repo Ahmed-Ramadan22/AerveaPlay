@@ -34,6 +34,8 @@ public class HomeFragment extends Fragment {
 
     private Button btn_test;
 
+    private static String TAG = "Tag";
+
     // viewModel Implement
     private MovieListViewModel movieListViewModel;
 
@@ -54,18 +56,40 @@ public class HomeFragment extends Fragment {
         // viewModel Provider
         movieListViewModel =   new ViewModelProvider(this).get(MovieListViewModel.class);
 
+        // calling the observer
+        ObserveAnyChange();
+
+        // 5- Tasting a method
+        btn_test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                searchMovieApi("fast",5);
+            }
+        });
 
     }
 
 
     // Observing any Data Change.
     private void ObserveAnyChange(){
-        movieListViewModel.getMovies().observe(this, new Observer<List<MovieModel>>() {
+        movieListViewModel.getMovies().observe(getViewLifecycleOwner(), new Observer<List<MovieModel>>() {
             @Override
             public void onChanged(List<MovieModel> movieModels) {
 
+                if (movieModels != null){
+                    for (MovieModel movieModel: movieModels){
+                        // get data in Log
+                        Log.v(TAG, " onChanged:  "+movieModel.getTitle());
+                    }
+                }
+
             }
         });
+    }
+
+    // 4- Calling Method in Home Fragment
+    public void searchMovieApi(String query, int pageNumber){
+        movieListViewModel.searchMovieApi(query, pageNumber);
     }
 
     private void GetRetrofitResponse() {
@@ -83,17 +107,17 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<MovieSearchResponse> call, Response<MovieSearchResponse> response) {
 
                 if (response.code() == 200){
-                    Log.v("Tag","The response "+ response.body().toString());
+                    Log.v(TAG,"The response "+ response.body().toString());
                     List<MovieModel> movies = new ArrayList<>(response.body().getMovies());
 
                     for (MovieModel movie: movies){
-                        Log.v("Tag","The Release date "+ movie.getTitle());
+                        Log.v(TAG,"The Release date "+ movie.getTitle());
                     }
 
                 } else {
 
                     try {
-                        Log.v("Tag", "Error: "+ response.errorBody().string());
+                        Log.v(TAG, "Error: "+ response.errorBody().string());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -123,11 +147,11 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<MovieModel> call, Response<MovieModel> response) {
                 if (response.code() == 200){
                     MovieModel model = response.body();
-                    Log.v("Tag", "The Response: " +model.getTitle());
+                    Log.v(TAG, "The Response: " +model.getTitle());
                 }else {
 
                     try {
-                        Log.v("Tag", "Error " + response.errorBody().string());
+                        Log.v(TAG, "Error " + response.errorBody().string());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
