@@ -58,8 +58,9 @@ dependencies {
     //  Retrofit & Gson to get api results from the movie Database
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    //  Picasso
-    implementation 'com.squareup.picasso:picasso:2.71828'
+    //  Glide: landing ImageView
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+
 
     // MVVM and LiveDate
     def lifecycle_version = "2.6.1"
