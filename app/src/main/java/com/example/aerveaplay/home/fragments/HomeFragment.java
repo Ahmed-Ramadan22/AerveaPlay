@@ -5,15 +5,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aerveaplay.R;
+import com.example.aerveaplay.adapters.IOnMovieListener;
+import com.example.aerveaplay.adapters.MovieRecyclerAdapter;
 import com.example.aerveaplay.request.Servicey;
 import com.example.aerveaplay.responses.MovieSearchResponse;
 import com.example.aerveaplay.utils.Credentials;
@@ -29,11 +32,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+public class HomeFragment extends Fragment implements IOnMovieListener {
 
-public class HomeFragment extends Fragment {
 
-    private Button btn_test;
-
+    private RecyclerView popularMovieRecycler;
+    private MovieRecyclerAdapter movieRecyclerAdapter;
     private static String TAG = "Tag";
 
     // viewModel Implement
@@ -51,24 +54,38 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        btn_test = view.findViewById(R.id.test_btn);
+        popularMovieRecycler = view.findViewById(R.id.popular_movies_recycler);
 
         // viewModel Provider
-        movieListViewModel =   new ViewModelProvider(this).get(MovieListViewModel.class);
+        movieListViewModel = new ViewModelProvider(this).get(MovieListViewModel.class);
 
         // calling the observer
         ObserveAnyChange();
+        //Calling a Recycler Movies;
+        ConfigRecyclerMovies();
+        searchMovieApi("fast",1);
 
-        // 5- Tasting a method
-        btn_test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                searchMovieApi("fast",5);
-            }
-        });
 
     }
 
+
+
+    //initialize a Recycler & Adding a data to it;
+    private void ConfigRecyclerMovies(){
+        movieRecyclerAdapter = new MovieRecyclerAdapter(this);
+        popularMovieRecycler.setAdapter(movieRecyclerAdapter);
+        popularMovieRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+    }
+
+    @Override
+    public void onMovieClick(int position) {
+
+    }
+
+    @Override
+    public void onCategoryClick(String category) {
+
+    }
 
     // Observing any Data Change.
     private void ObserveAnyChange(){
@@ -79,13 +96,16 @@ public class HomeFragment extends Fragment {
                 if (movieModels != null){
                     for (MovieModel movieModel: movieModels){
                         // get data in Log
-                        Log.v(TAG, " onChanged:  "+movieModel.getTitle());
+                        Log.v(TAG, " onChanged:  "+ movieModel.getTitle());
+                        movieRecyclerAdapter.setmMovieModels(movieModels);
                     }
                 }
 
             }
         });
     }
+
+
 
     // 4- Calling Method in Home Fragment
     public void searchMovieApi(String query, int pageNumber){
