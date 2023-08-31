@@ -39,15 +39,17 @@ public class MovieRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.View
 
         ((MovieViewHolder) holder).title.setText(mMovieModels.get(position).getTitle());
         ((MovieViewHolder) holder).release_date.setText(mMovieModels.get(position).getRelease_date());
-        ((MovieViewHolder) holder).duration.setText(mMovieModels.get(position).getRuntime());
+        ((MovieViewHolder) holder).duration.setText("" + mMovieModels.get(position).getRuntime());
 
         // vote average is over 10, and our rating bar is 5 start So we dividing by 2;
         ((MovieViewHolder) holder).ratingBar.setRating((mMovieModels.get(position).getVote_average())/2);
 
         // get image Movie using Glide;
         Glide.with(holder.itemView.getContext())
-                .load(mMovieModels.get(position).getPoster_path())
+                .load("https://image.tmdb.org/t/p/w500/"
+                        + mMovieModels.get(position).getPoster_path())
                 .into((((MovieViewHolder)holder).imageMovie));
+
 
     }
 

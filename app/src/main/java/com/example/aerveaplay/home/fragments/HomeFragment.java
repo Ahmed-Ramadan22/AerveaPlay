@@ -55,26 +55,24 @@ public class HomeFragment extends Fragment implements IOnMovieListener {
         super.onViewCreated(view, savedInstanceState);
 
         popularMovieRecycler = view.findViewById(R.id.popular_movies_recycler);
-
         // viewModel Provider
         movieListViewModel = new ViewModelProvider(this).get(MovieListViewModel.class);
 
-        // calling the observer
-        ObserveAnyChange();
+
         //Calling a Recycler Movies;
         ConfigRecyclerMovies();
+        // calling the observer
+        ObserveAnyChange();
         searchMovieApi("fast",1);
 
 
     }
 
-
-
     //initialize a Recycler & Adding a data to it;
     private void ConfigRecyclerMovies(){
         movieRecyclerAdapter = new MovieRecyclerAdapter(this);
         popularMovieRecycler.setAdapter(movieRecyclerAdapter);
-        popularMovieRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        popularMovieRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
     @Override
