@@ -5,6 +5,8 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
+import com.google.gson.annotations.SerializedName;
+
 public class MovieModel implements Parcelable {
 
     // THIS clas for our Movies Details.

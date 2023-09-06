@@ -1,8 +1,5 @@
 package com.example.aerveaplay.request;
 
-import android.credentials.Credential;
-import android.nfc.Tag;
-import android.renderscript.ScriptGroup;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
