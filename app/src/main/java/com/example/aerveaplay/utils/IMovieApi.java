@@ -19,10 +19,8 @@ public interface IMovieApi {
             @Query("page") String page
     );
 
-
     // Search Link by id:--url
     //  https://api.themoviedb.org/3/movie/343611?api_key=e2dd873b89d9427e4282098bbb17082c
-    // 343611 is a id for a movie
 
     @GET("3/movie/{id}?")
     Call<MovieModel> getMovie(

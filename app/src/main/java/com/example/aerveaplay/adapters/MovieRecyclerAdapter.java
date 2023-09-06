@@ -32,6 +32,7 @@ public class MovieRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.View
                         false);
 
         return new MovieViewHolder(view, onMovieListener);
+
     }
 
     @Override

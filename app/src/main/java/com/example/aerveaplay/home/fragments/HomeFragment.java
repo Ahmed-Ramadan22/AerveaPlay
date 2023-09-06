@@ -34,7 +34,6 @@ import retrofit2.Response;
 
 public class HomeFragment extends Fragment implements IOnMovieListener {
 
-
     private RecyclerView popularMovieRecycler;
     private MovieRecyclerAdapter movieRecyclerAdapter;
     private static String TAG = "Tag";
@@ -58,18 +57,25 @@ public class HomeFragment extends Fragment implements IOnMovieListener {
         // viewModel Provider
         movieListViewModel = new ViewModelProvider(this).get(MovieListViewModel.class);
 
+        //Search movie EditText
+        SetupSearchMovie();
 
         //Calling a Recycler Movies;
         ConfigRecyclerMovies();
         // calling the observer
         ObserveAnyChange();
-        searchMovieApi("fast",1);
+        searchMovieApi("fast", 1);
+
+
+    }
+
+    private void SetupSearchMovie() {
 
 
     }
 
     //initialize a Recycler & Adding a data to it;
-    private void ConfigRecyclerMovies(){
+    private void ConfigRecyclerMovies() {
         movieRecyclerAdapter = new MovieRecyclerAdapter(this);
         popularMovieRecycler.setAdapter(movieRecyclerAdapter);
         popularMovieRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -86,15 +92,15 @@ public class HomeFragment extends Fragment implements IOnMovieListener {
     }
 
     // Observing any Data Change.
-    private void ObserveAnyChange(){
+    private void ObserveAnyChange() {
         movieListViewModel.getMovies().observe(getViewLifecycleOwner(), new Observer<List<MovieModel>>() {
             @Override
             public void onChanged(List<MovieModel> movieModels) {
 
-                if (movieModels != null){
-                    for (MovieModel movieModel: movieModels){
+                if (movieModels != null) {
+                    for (MovieModel movieModel : movieModels) {
                         // get data in Log
-                        Log.v(TAG, " onChanged:  "+ movieModel.getTitle());
+                        Log.v(TAG, " onChanged:  " + movieModel.getTitle());
                         movieRecyclerAdapter.setmMovieModels(movieModels);
                     }
                 }
@@ -104,9 +110,8 @@ public class HomeFragment extends Fragment implements IOnMovieListener {
     }
 
 
-
     // 4- Calling Method in Home Fragment
-    public void searchMovieApi(String query, int pageNumber){
+    public void searchMovieApi(String query, int pageNumber) {
         movieListViewModel.searchMovieApi(query, pageNumber);
     }
 
@@ -118,24 +123,24 @@ public class HomeFragment extends Fragment implements IOnMovieListener {
                 .searchMovie(
                         Credentials.API_KEY,
                         "Action",
-                        "1" );
+                        "1");
 
         responseCall.enqueue(new Callback<MovieSearchResponse>() {
             @Override
             public void onResponse(Call<MovieSearchResponse> call, Response<MovieSearchResponse> response) {
 
-                if (response.code() == 200){
-                    Log.v(TAG,"The response "+ response.body().toString());
+                if (response.code() == 200) {
+                    Log.v(TAG, "The response " + response.body().toString());
                     List<MovieModel> movies = new ArrayList<>(response.body().getMovies());
 
-                    for (MovieModel movie: movies){
-                        Log.v(TAG,"The Release date "+ movie.getTitle());
+                    for (MovieModel movie : movies) {
+                        Log.v(TAG, "The Release date " + movie.getTitle());
                     }
 
                 } else {
 
                     try {
-                        Log.v(TAG, "Error: "+ response.errorBody().string());
+                        Log.v(TAG, "Error: " + response.errorBody().string());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -152,7 +157,7 @@ public class HomeFragment extends Fragment implements IOnMovieListener {
     }
 
     //This Function for Get Movie by id
-    private void GetRetrofitResponseAccordingToID(){
+    private void GetRetrofitResponseAccordingToID() {
 
         IMovieApi IMovieApi = Servicey.getMovieApi();
         Call<MovieModel> responseCall = IMovieApi
@@ -163,10 +168,10 @@ public class HomeFragment extends Fragment implements IOnMovieListener {
         responseCall.enqueue(new Callback<MovieModel>() {
             @Override
             public void onResponse(Call<MovieModel> call, Response<MovieModel> response) {
-                if (response.code() == 200){
+                if (response.code() == 200) {
                     MovieModel model = response.body();
-                    Log.v(TAG, "The Response: " +model.getTitle());
-                }else {
+                    Log.v(TAG, "The Response: " + model.getTitle());
+                } else {
 
                     try {
                         Log.v(TAG, "Error " + response.errorBody().string());
